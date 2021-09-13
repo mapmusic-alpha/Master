@@ -10,7 +10,6 @@ const eventSchema = new Schema({
     genre: Array,
     artists: Array,
     openingHours: String,
-    // ticketsAvailable:??
 
 
     location: {
