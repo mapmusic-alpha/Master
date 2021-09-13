@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
+const passport = require('passport')
 
 
 
@@ -15,11 +16,21 @@ router.get("/log-in", (req, res, next) => {
 
 // .POST ROUTES HERE
 
+router.post('/log-in', passport.authenticate('local', {
+
+    successRedirect: '/user-profile',
+
+    failureRedirect: '/log-in',
+    passReqToCallback: true
+
+
+}))
+
 router.post("/sign-up", (req, res, next) => {
     const username = req.body.username
     const password = req.body.username
-    // const email = req.body.email
-    // const emailRepetition = req.body.emailRepetition
+    const email = req.body.email
+    const emailRepetition = req.body.emailRepetition
     console.log(req.body)
 
     if (username.length === 0) {
@@ -30,10 +41,10 @@ router.post("/sign-up", (req, res, next) => {
         res.render("sign-up", { message: "Your password should be longer than 5 characters" })
         return;
     }
-    // if (email !== emailRepetition) {
-    //     res.render("sign-up", { message: "e-mail address wrong" })
-    //     return;
-    // }
+    if (email !== emailRepetition) {
+        res.render("sign-up", { message: "e-mail address wrong" })
+        return;
+    }
 
     User.findOne({ username: username })
         .then(userFromDB => {
@@ -47,11 +58,11 @@ router.post("/sign-up", (req, res, next) => {
                 const salt = bcrypt.genSaltSync()
                 const hash = bcrypt.hashSync(password, salt)
 
-                User.create({ username: username, password: hash })
+                User.create({ username: username, password: hash, email: email })
                     .then(createdUser => {
 
                         console.log(createdUser)
-                        res.redirect('/login')
+                        res.redirect('log-in')
 
                     })
                     .catch(err => {
@@ -61,9 +72,9 @@ router.post("/sign-up", (req, res, next) => {
         })
 })
 
-// router.post("/log-in", (req, res, next) => {
-//     const username = req.body.username
-//     const password = req.body.password
-// })
+router.post("/log-in", (req, res, next) => {
+    const username = req.body.username
+    const password = req.body.password
+})
 
 module.exports = router
