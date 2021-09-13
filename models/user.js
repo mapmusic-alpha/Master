@@ -7,6 +7,12 @@ const userSchema = new Schema({
     // unique: true -> Ideally, should be unique, but its up to you
   },
   password: String,
+
+  role : {
+    type: String,
+    enum : ["user", "admin", "host"], 
+    default: "user"
+  }
 });
 
 const User = model("User", userSchema);
