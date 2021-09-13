@@ -19,6 +19,26 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+//session config
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+const DB_URL = process.env.MONGO_DB
+
+
+// app.use(
+//     session({
+//         secret: process.env.SESSION_SECRET,
+//         // for how long is the user logged in -> this would be one day 	
+//         cookie: { maxAge: 1000 * 60 * 60 * 24 },
+//         resave: true,
+//         saveUninitialized: false,
+//         store: MongoStore.create({
+//             mongoUrl: DB_URL
+//         })
+//     })
+// )
+
+
 // default value for title local
 const projectName = "map-music";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
@@ -31,6 +51,9 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
+
+const auth = require('./routes/auth')
+app.use('/', auth)
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
