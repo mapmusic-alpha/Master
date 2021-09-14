@@ -30,13 +30,12 @@ router.post("/sign-up", (req, res, next) => {
     const email = req.body.email
     const emailRepetition = req.body.emailRepetition
     console.log(req.body)
-
-    if (username.length === 0) {
-        res.render("sign-up", { message: "Your username cannot be empty" })
-        return;
-    }
     if (password.length < 5) {
         res.render("sign-up", { message: "Your password should be longer than 5 characters" })
+        return;
+    }
+    if (username.length === 0) {
+        res.render("sign-up", { message: "Your username cannot be empty" })
         return;
     }
     if (email !== emailRepetition) {
