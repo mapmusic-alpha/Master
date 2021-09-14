@@ -20,7 +20,6 @@ router.get('/profile', loginCheck(), (req, res, next) => {
 
   const loggedInUser = req.user
   console.log(req.user)
-
   res.render('profile', { user: loggedInUser })
 
 })
