@@ -5,9 +5,11 @@ const loginCheck = () => {
         if (req.isAuthenticated()) {
 
             next();
+
         } else {
 
             res.redirect('/login')
+
         }
     }
 }
