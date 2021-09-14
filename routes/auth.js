@@ -18,11 +18,9 @@ router.get("/log-in", (req, res, next) => {
 
 router.post('/log-in', passport.authenticate('local', {
 
-    successRedirect: '/user-profile',
-
+    successRedirect: '/profile',
     failureRedirect: '/log-in',
     passReqToCallback: true
-
 
 }))
 
@@ -42,7 +40,7 @@ router.post("/sign-up", (req, res, next) => {
         return;
     }
     if (email !== emailRepetition) {
-        res.render("sign-up", { message: "e-mail address wrong" })
+        res.render("sign-up", { message: "Your Email address is incorrect" })
         return;
     }
 
@@ -50,7 +48,7 @@ router.post("/sign-up", (req, res, next) => {
         .then(userFromDB => {
             if (userFromDB !== null) {
                 console.log('did not create user')
-                res.render('sign-up', { message: "this name is already taken" })
+                res.render('sign-up', { message: "This username is unavailable" })
                 return
 
             } else {
@@ -72,9 +70,12 @@ router.post("/sign-up", (req, res, next) => {
         })
 })
 
-router.post("/log-in", (req, res, next) => {
-    const username = req.body.username
-    const password = req.body.password
+router.get('/logout', (req, res, next) => {
+
+
+    req.logout();
+    res.redirect('log-in')
+
 })
 
 module.exports = router
