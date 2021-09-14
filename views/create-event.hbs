@@ -1,0 +1,82 @@
+<h3>CREATE EVENT</h3>
+
+<p class="only-comment">=> router get request for admin that gets all locations from db</p>
+
+<form action="/create-event" method="POST" name="create-event">
+    <label for="chooseLocation">select your location</label>
+    <select name="chooseLocation">
+      {{#each location}}
+      <option value="{{_id}}">{{name}}</option>
+      {{/each}}
+    </select>
+
+    <label for="eventName">type in event name</label>
+    <input type="text" name="eventName">
+    <label name="select-genre" action="admin" method="POST">choose genre</label>
+    <select name="chooseGenre" multiple>
+        <option value="jazz">Jazz</option>
+        <option value="hip-hop">Hip-Hop</option>
+        <option value="raggea">Raggea</option>
+        <option value="hard-techno">Hard Techno</option>
+        <option value="melodic-techno"Melodic Techno></option>
+        <option value="minimalistic-techno">Minimalstic Techno</option>
+    </select>
+
+    <label for="nameArtist1">type in artist name</label>
+    <input type="text" name="nameArtist1">
+    <label for="spotifyNameArtist1">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist1">
+
+    <label for="nameArtist2">type in artist name</label>
+    <input type="text" name="nameArtist2">
+    <label for="spotifyNameArtist2">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist2">
+
+    <label for="nameArtist3">type in artist name</label>
+    <input type="text" name="nameArtist3">
+    <label for="spotifyNameArtist3">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist3">
+
+    <label for="nameArtist4">type in artist name</label>
+    <input type="text" name="nameArtist4">
+    <label for="spotifyNameArtist4">type in spotify username of artist</label>
+    <input type="text" name="spotfiyNameArtist4">
+
+    <label for="nameArtist5">type in artist name</label>
+    <input type="text" name="nameArtist5">
+    <label for="spotifyNameArtist5">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist5">
+
+    <label for="nameArtist6">type in artist name</label>
+    <input type="text" name="nameArtist6">
+    <label for="spotifyNameArtist6">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist6">
+
+    <label for="nameArtist7">type in artist name</label>
+    <input type="text" name="nameArtist7">
+    <label for="spotifyNameArtist7">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist7">
+
+    <label for="nameArtist8">type in artist name</label>
+    <input type="text" name="nameArtist8">
+    <label for="spotifyNameArtist8">type in spotify username of artist</label>
+    <input type="text" name="spotifyNameArtist8">
+   
+    <label for="date">type in date in format DD.MM => no Zeros if possible</label>
+    <input type="text" name="date">
+    
+    <label for="cost">type in ticket price</label>
+    <input type="number" name="cost">
+
+    <label for="openingHours">type in opening hours in format HH:MM - HH:MM</label>
+    <input type="text" name="openingHours">
+
+    <label for="ageOfEntrance">select age of entrance</label>
+    <select name="ageOfEntrance">
+        <option value="Eighteen +">Eighteen +</option>
+        <option value="Twenty One +">Twenty One +</option>
+    </select>
+
+    <button type="submit">create</button>
+</form>
+    
