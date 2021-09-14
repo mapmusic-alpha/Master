@@ -1,5 +1,6 @@
 const router = require("express").Router();
-
+const User = require("../models/user");
+const bcrypt = require("bcrypt")
 
 // .GET ROUTES HERE
 
@@ -39,7 +40,7 @@ if(username.length === 0){
     res.render("sign-up", {message : "your username cannot be nothing..."})
 }
 
-if(password.length > 5){
+if(password.length < 5){
   res.render("sign-up", {message : "your password is to short"})
 }
 
