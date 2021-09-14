@@ -13,52 +13,74 @@ const map = new mapboxgl.Map({
     // maxBounds: mapBounds
 })
 
-
 const nav = new mapboxgl.NavigationControl()
 
-// map.on('load', () => {
-//     map.addSource('places', {
-//         'type': 'geojson',
-//         'data': {
-//             'type': 'FeatureCollection',
-//             'features': [
-//                 {
-//                     'type': 'feature',
-//                     'properties': {
-//                         'description': 'Famous club in the center of Berlin',
-//                         'name': 'Tresor',
-//                         'type': 'Club',
 
-//                     },
-//                     'geometry': {
-//                         'type': 'Point',
-//                         'coordinates': [13.4430, 52.5111]
-//                     }
-//                 },
+const events = [{
+    name: 'Cool party1',
+    date: 12 - 01 - 02,
+    cost: 5,
+    genre: 'Techno',
 
-//             ]
-//         }
-//     });
+    location: {
 
-const events = [
+        coordinates: [13.4430, 52.5111]
 
-    {
-        'name': 'party1',
-        location: 'berghain',
-        cost: 5
-    },
-    {
-        'name': 'party2',
-        location: 'tresor',
-        cost: 10
-    },
-    {
-        name: 'party2',
-        location: 'renate',
-        cost: 15
     },
 
+},
+{
+    name: 'Cool party2',
+    date: 12 - 01 - 03,
+    cost: 10,
+    genre: 'Techno',
+
+    location: {
+
+        coordinates: [13.5617, 52.5002]
+
+    },
+
+},
+{
+    name: 'Cool party2',
+    date: 12 - 01 - 03,
+    cost: 10,
+    genre: 'Techno',
+
+    location: {
+
+        coordinates: [13.4652, 52.4974]
+
+    },
+
+},
 ]
+
+const features = []
+
+events.forEach(event => {
+
+    const feature = {
+        'type': 'feature',
+
+        'properties': {
+            'name': event.name
+        },
+
+        'geometry': {
+            'type': 'Point',
+            'coordinates': event.location.coordinates
+        }
+    }
+
+    features.push(feature)
+})
+
+
+console.log(features)
+
+// mapbox config below
 
 
 map.on('load', () => {
@@ -67,34 +89,7 @@ map.on('load', () => {
         'type': 'geojson',
         'data': {
             'type': 'FeatureCollection',
-            'features': [
-                {
-                    'type': 'feature',
-                    'properties': {
-
-                        'name': events[0].name
-
-                    },
-                    'geometry': {
-
-                        'type': 'Point',
-                        'coordinates': [13.4430, 52.5111]
-                    }
-                },
-                {
-                    'type': 'feature',
-                    'properties': {
-
-                        'name': events[1].name
-                    },
-                    'geometry': {
-
-                        'type': 'Point',
-                        'coordinates': [13.5617, 52.5002]
-                    }
-                },
-
-            ]
+            'features': features
         }
     });
 
@@ -105,7 +100,7 @@ map.on('load', () => {
         'type': 'circle',
         'source': 'places',
         'paint': {
-            'circle-color': '#4264fb',
+            'circle-color': '#e60026',
             'circle-radius': 6,
             'circle-stroke-width': 2,
             'circle-stroke-color': '#ffffff'
