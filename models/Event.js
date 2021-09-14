@@ -9,6 +9,7 @@ const eventSchema = new Schema({
     cost: Number,
     genre: Array,
     artists: Array,
+    artistsSoptify : Array,
     openingHours: String,
 
 
@@ -19,13 +20,7 @@ const eventSchema = new Schema({
 
     },
 
-    ageOfEntrance: {
-
-        type: String,
-        enum: ['Eighteen + ', 'Twenty One +'],
-        default: 'Eighteen +'
-
-    }
+    ageOfEntrance: String
 
 });
 
