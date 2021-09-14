@@ -1,8 +1,14 @@
 const router = require("express").Router();
+<<<<<<< createEventAndLocation
 const User = require("../models/user");
 const Location = require("../models/Location")
 const Event = require("../models/Event")
 const bcrypt = require("bcrypt")
+=======
+
+const { loginCheck } = require('./middleware')
+
+>>>>>>> master
 
 // .GET ROUTES HERE
 
@@ -11,25 +17,11 @@ router.get("/", (req, res, next) => {
 });
 
 
-router.get("/map", (req, res, next) => {
-  res.render("map")
-})
-
-
-router.get("/sign-up", (req, res, next) => {
-  res.render("sign-up")
-})
-
-
-router.get("/log-in", (req, res, next) => {
-  res.render("log-in")
-})
-
-
 router.get("/mission", (req, res, next) => {
   res.render(("mission"))
 })
 
+<<<<<<< createEventAndLocation
 // .POST ROUTES HERE
 
 router.post("/sign-up", (req, res, next) => {
@@ -45,38 +37,23 @@ if(username.length === 0){
 if(password.length < 5){
   res.render("sign-up", {message : "your password is to short"})
 }
+=======
+//middleware protected profile route
+>>>>>>> master
 
-if(email !== emailRepetition){
-  res.render("sign-up", {message : "e-mail adress wrong"})
-}
+router.get('/profile', loginCheck(), (req, res, next) => {
 
-User.findOne({username: username})
-    .then(userFromDB => {
-      if (userFromDB !== null){
-        res.render('sign-up', { message : "this name is already taken"})
-        return 
+  const loggedInUser = req.user
+  console.log(req.user)
+  res.render('profile', { user: loggedInUser })
 
-      } else {
-        const salt = bcrypt.genSaltSync()
-        const hash = bcrypt.hashSync(password, salt)
-
-        User.create({ username : username, password: hash})
-        .then(createdUser => {
-          res.redirect("user-profile")
-
-        })
-        .catch(err => {
-          next(err)
-        })
-      }
-    })
 })
 
-router.post("/log-in", (req, res, next) => {
-  const username = req.body.username
-  const password = req.body.password
+router.get("/map", (req, res, next) => {
+  res.render("map")
 })
 
+<<<<<<< createEventAndLocation
 
 //ADMIN ROUTES
 
@@ -199,4 +176,6 @@ router.post("/create-event", (req, res, next) => {
       
 
 
+=======
+>>>>>>> master
 module.exports = router;

@@ -8,11 +8,14 @@ const userSchema = new Schema({
   },
   password: String,
 
-  role : {
+  role: {
     type: String,
-    enum : ["user", "admin", "host"], 
+    enum: ["user", "admin", "host"],
     default: "user"
-  }
+  },
+
+  email: String
+
 });
 
 const User = model("User", userSchema);
