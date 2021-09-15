@@ -70,7 +70,7 @@ a {
 }
 
 #buttons > button:hover{
-  color:#fff
+  color:#a48beb
 }
 
 #buttons > button > a{
@@ -166,4 +166,17 @@ a {
   text-decoration: #fff;
   font-family: "Futura";
   font-weight: 800;
+}
+
+#filterButtonsContainer{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-left: 150px;
+}
+#filterButtons{
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
