@@ -1,12 +1,53 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Futura", Helvetica, Arial, sans-serif;
+  background-color: #272727;
+}
+
+
+#header > div.nameAndSlogan > h3{
+  color : #fff; 
+  font-size : 25px
+}
+
+#header > div.nameAndSlogan > h1{
+  color : #a48beb;
+  font-size : 75px 
 }
 
 a {
-  color: #00b7ff;
+  color: #fff;
+  font: "Futura", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-decoration-line: none;
+
 }
 
-h1 {
-  color: 15px;
+#header {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+#buttons {
+  margin-top: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#buttons > button {
+  width: 250px;
+  height : 50px;
+  background-color : #a48beb;
+  -moz-text: #fff;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px
 }
