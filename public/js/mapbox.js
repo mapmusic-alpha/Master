@@ -1,7 +1,13 @@
 
+axios.get("mongodb+srv://mapmusic-admin:T33lo3ff3l@cluster0.bknjb.mongodb.net/map-music")
+    .then(response => {
+    })
+    .catch(error => console.log(error))
+
+
+
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2lyYW5ib3lsZSIsImEiOiJja3RlNTYyNW0ybHYwMnZqcDFydHF6ZGY4In0.jDVDbfsctFgWo2l3jRFnww'
-
 const berlinCoords = [13.404954, 52.520008]
 const mapBounds = [13.404954, 52.520008]
 
@@ -58,6 +64,14 @@ const events = [{
 ]
 
 const features = []
+
+// Event.find().populate('location')
+//     .then(events => {
+
+//         console.log(events)
+
+//     })
+//     .catch(err => console.log(err))
 
 events.forEach(event => {
 
