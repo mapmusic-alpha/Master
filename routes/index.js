@@ -54,6 +54,7 @@ router.get("/map", (req, res, next) => {
 
 
 
+
 //create and list event routes
 router.get("/create-event", (req, res, next) => {
   Location.find()
@@ -220,6 +221,20 @@ router.post('/list-events/edit-event/:id', (req, res, next) => {
     .catch(err => next(err))
 })
 
+
+
+
+router.get('/api/events', (req, res) => {
+
+  Event.find().populate('location')
+    .then(events => {
+
+      res.send(events)
+
+    })
+    .catch(err => next(err))
+
+})
 
 
 
