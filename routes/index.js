@@ -54,6 +54,7 @@ router.get("/map", (req, res, next) => {
 
 
 
+
 //create and list event routes
 router.get("/create-event", (req, res, next) => {
   Location.find()
