@@ -54,8 +54,7 @@ router.get("/map", (req, res, next) => {
 
 
 
-//ADMIN ROUTES
-
+//create and list event routes
 router.get("/create-event", (req, res, next) => {
   Location.find()
     .then(location => {
@@ -66,12 +65,17 @@ router.get("/create-event", (req, res, next) => {
       next(err)
     })
 })
-router.get("/admin", (req, res, next) => {
+router.get("/admin", loginCheck(), (req, res, next) => {
   res.render("admin")
 })
 
 router.get("/list-events", (req, res, next) => {
-  res.render("list-events")
+  Event.find().populate('location')
+    .then(events => {
+      console.log(events)
+      res.render("list-events", { events: events })
+    })
+
 })
 
 router.get("/list-locations", (req, res, next) => {
@@ -87,6 +91,8 @@ router.post("/admin", (req, res, next) => {
   const locationNearestStation = req.body.nearestStation
   const locationNearestStationDistance = req.body.nearestStationDistance
   const locationAvailableLines = req.body.nearestStationAvailableLines
+
+
 
   console.log(locationName, locationDescription, locationCoordX, locationCoordY, locationLogo, locationNearestStation, locationNearestStationDistance, locationAvailableLines)
 
@@ -116,7 +122,7 @@ router.post("/admin", (req, res, next) => {
 })
 
 
-router.post("/create-event", (req, res, next) => {
+router.post("/create-event", loginCheck(), (req, res, next) => {
   const location = req.body.chooseLocation
   console.log(location)
   const eventName = req.body.eventName
@@ -171,6 +177,53 @@ router.post("/create-event", (req, res, next) => {
     })
   //}
 })
+
+
+router.get('/list-events/delete/:id', (req, res, next) => {
+
+  const clickedEvent = req.params.id
+  console.log(clickedEvent)
+  Event.findByIdAndDelete(clickedEvent)
+    .then(() => {
+
+      res.redirect('/list-events')
+    })
+    .catch(err => next(err))
+
+})
+
+router.get('/list-events/edit-event/:id', (req, res, next) => {
+
+  const clickedEvent = req.params.id
+
+  Event.findById(clickedEvent)
+    .then(event => {
+      res.render('edit-event', { event: event })
+    })
+    .catch(err => next(err))
+})
+
+
+router.post('/list-events/edit-event/:id', (req, res, next) => {
+
+  Event.findByIdAndUpdate(req.params.id, {
+
+    name: req.body.name,
+    cost: req.body.cost,
+    openingHours: req.body.openingHours
+
+  }, { new: true })
+    .then((event) => {
+
+      res.redirect('/list-events')
+    })
+    .catch(err => next(err))
+})
+
+
+
+
+
 
 
 
