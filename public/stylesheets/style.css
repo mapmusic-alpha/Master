@@ -167,3 +167,27 @@ a {
   font-family: "Futura";
   font-weight: 800;
 }
+
+
+
+.mapbox-popup{
+
+  color:rgb(21, 4, 36);
+  background-color: grey;
+  border-radius: 5%;
+  font: 14px "Futura", Helvetica, Arial, sans-serif;
+  border-color: indigo;
+
+}
+
+.mapbox-popup h4{
+
+  text-shadow: grey;
+  text-align: center;
+
+}
+
+.mapboxgl-popup-content{
+
+  background-color: lavender;
+}

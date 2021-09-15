@@ -1,6 +1,7 @@
 
 
 const features = []
+//get request for events
 axios.get("/api/events")
     .then(events => {
 
@@ -38,7 +39,7 @@ console.log(features)
 
 
 
-
+//mapbox config
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2lyYW5ib3lsZSIsImEiOiJja3RlNTYyNW0ybHYwMnZqcDFydHF6ZGY4In0.jDVDbfsctFgWo2l3jRFnww'
 const berlinCoords = [13.404954, 52.520008]
 const mapBounds = [13.404954, 52.520008]
@@ -55,7 +56,6 @@ const nav = new mapboxgl.NavigationControl()
 
 
 
-// mapbox config below
 
 
 map.on('load', () => {
@@ -78,14 +78,16 @@ map.on('load', () => {
             'circle-color': '#e60026',
             'circle-radius': 6,
             'circle-stroke-width': 2,
-            'circle-stroke-color': '#ffffff'
+            'circle-stroke-color': '#000000'
         }
     });
 
     // Create a popup, but don't add it to the map yet.
     const popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
+        className: 'mapbox-popup',
+
     });
 
     map.on('mouseenter', 'places', (e) => {
