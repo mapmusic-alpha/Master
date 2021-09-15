@@ -7,7 +7,7 @@ axios.get("/api/events")
         let allEvents = events.data
 
 
-        console.log(allEvents[0].location.name)
+        console.log(allEvents)
         allEvents.forEach(event => {
 
             const feature = {
