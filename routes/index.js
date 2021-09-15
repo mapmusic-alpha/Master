@@ -223,6 +223,20 @@ router.post('/list-events/edit-event/:id', (req, res, next) => {
 
 
 
+router.get('/api/events', (req, res) => {
+
+  Event.find().populate('location')
+    .then(events => {
+
+      res.send(events)
+
+    })
+    .catch(err => next(err))
+
+})
+
+
+
 
 
 
