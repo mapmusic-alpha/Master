@@ -1,13 +1,13 @@
 <h3>CREATE EVENT</h3>
 
-<p class="only-comment">=> router get request for admin that gets all locations from db</p>
+<p class="only-comment"></p>
 
 <form action="/create-event" method="POST" name="create-event">
     <label for="chooseLocation">select your location</label>
     <select name="chooseLocation">
-      {{#each location}}
-      <option value="{{_id}}">{{name}}</option>
-      {{/each}}
+        {{#each location}}
+        <option value="{{_id}}">{{name}}</option>
+        {{/each}}
     </select>
 
     <label for="eventName">type in event name</label>
@@ -18,7 +18,7 @@
         <option value="hip-hop">Hip-Hop</option>
         <option value="raggea">Raggea</option>
         <option value="hard-techno">Hard Techno</option>
-        <option value="melodic-techno"Melodic Techno></option>
+        <option value="melodic-techno" Melodic Techno></option>
         <option value="minimalistic-techno">Minimalstic Techno</option>
     </select>
 
@@ -61,10 +61,10 @@
     <input type="text" name="nameArtist8">
     <label for="spotifyNameArtist8">type in spotify username of artist</label>
     <input type="text" name="spotifyNameArtist8">
-   
+
     <label for="date">type in date in format DD.MM => no Zeros if possible</label>
     <input type="text" name="date">
-    
+
     <label for="cost">type in ticket price</label>
     <input type="number" name="cost">
 
@@ -79,4 +79,3 @@
 
     <button type="submit">create</button>
 </form>
-    
