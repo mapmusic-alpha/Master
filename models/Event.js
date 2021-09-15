@@ -9,7 +9,7 @@ const eventSchema = new Schema({
     cost: Number,
     genre: Array,
     artists: Array,
-    artistsSoptify : Array,
+    artistsSpotify: Array,
     openingHours: String,
 
 
