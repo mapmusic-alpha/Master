@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/kiranboyle/cktifo8rp658g17pp4mlnw554',
     center: berlinCoords,
     zoom: 12,
-    // maxBounds: mapBounds
+    //maxBounds: mapBounds
 })
 
 const nav = new mapboxgl.NavigationControl()
