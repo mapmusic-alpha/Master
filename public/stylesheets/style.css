@@ -172,11 +172,35 @@ a {
   display: flex;
   flex-direction: row;
   align-content: center;
-  margin-left: 150px;
+  margin-left: 375px;
 }
+
 #filterButtons{
-  width: 150px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  margin-bottom: 25px;
+  margin-top: -50px;
+}
+#filterButtons > button{
+  width: 75px;
+  height : 50px;
+  background-color : #a48beb;
+  color: #fff;
+  font-family: "Futura";
+  font-weight: 600;
+  border-radius: 20px;
+  margin-left: 7.5px;
+  margin-right: 7.5px
+
+}
+
+#map{
+  margin-left: 150px
+}
+
+#createEventForm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
 }
