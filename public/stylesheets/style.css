@@ -225,3 +225,15 @@ a {
   height : 50px;
   font-size: large;
 }
+
+
+.mapbox-popup{
+  color:rgb(21, 4, 36);
+  background-color: grey;
+  border-radius: 5%;
+  font: 14px “Futura”, Helvetica, Arial, sans-serif;
+}
+.mapbox-popup h4{
+  text-shadow: grey;
+  text-align: center;
+}
