@@ -1,8 +1,20 @@
-<button  id="goBack">
+<button id="goBack">
     <a href="/"> Back to Homepage</a>
 </button>
 <div>
- <button id="goBack">
-    <a href="/profile"> Back to your profile</a>
- </button>
+    <button id="goBack">
+        <a href="/profile"> Back to your profile</a>
+    </button>
 </div>
+
+{{#each locations}}
+<h3>Location Information</h3>
+<div>
+    <div>
+        <img src="{{logo}}" alt="" style="width: 100px; height: 100px;border-radius: 10px;">
+    </div>
+    <h4>{{name}}</h4>
+    <br>
+    {{description}}
+</div>
+{{/each}}
