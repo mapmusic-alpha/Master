@@ -161,7 +161,6 @@ a {
   width: 250px;
   height : 50px; 
   background-color : #a48beb;
-  color: #fff;
   border-radius: 25px;
   text-decoration: #fff;
   font-family: "Futura";
@@ -327,6 +326,7 @@ h3 {
   font-family: "Futura";
   font-weight: 800;
 }
+
 
 .mapbox-popup{
   color:rgb(21, 4, 36);
