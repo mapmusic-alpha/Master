@@ -332,11 +332,12 @@ h3 {
   color: black;
   background-color: black;
   border-radius: 5%;
-  font: 14px “Futura”, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 .mapbox-popup h4{
   text-shadow: grey;
   text-align: center;
+  font-size:1.2em;
 }
 
 
@@ -351,3 +352,5 @@ h3 {
 
   border-radius: 10%;
 }
+
+
