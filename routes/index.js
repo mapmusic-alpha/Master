@@ -80,7 +80,18 @@ router.get("/list-events", (req, res, next) => {
 })
 
 router.get("/list-locations", loginCheck(), (req, res, next) => {
-  res.render("list-locations")
+
+  Location.find()
+    .then(locations => {
+
+      res.render('list-locations', { locations: locations })
+
+    })
+    .catch(err => {
+      next(err)
+    })
+
+
 })
 
 router.post("/create-location", loginCheck(), (req, res, next) => {
