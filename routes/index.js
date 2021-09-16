@@ -79,11 +79,11 @@ router.get("/list-events", (req, res, next) => {
 
 })
 
-router.get("/list-locations", (req, res, next) => {
+router.get("/list-locations", loginCheck(), (req, res, next) => {
   res.render("list-locations")
 })
 
-router.post("/create-location", (req, res, next) => {
+router.post("/create-location", loginCheck(), (req, res, next) => {
   const locationName = req.body.location
   const locationDescription = req.body.description
   const locationCoordX = req.body.locationX
@@ -125,7 +125,7 @@ router.post("/create-location", (req, res, next) => {
 
 router.post("/create-event", loginCheck(), (req, res, next) => {
   const location = req.body.chooseLocation
-  
+
   const eventName = req.body.eventName
   const date = req.body.date
   const cost = req.body.cost
