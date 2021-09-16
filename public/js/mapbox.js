@@ -16,7 +16,8 @@ axios.get("/api/events")
                     'cost': event.cost,
                     'location': event.location.name,
                     'openingHours': event.openingHours,
-                    'date': event.date
+                    'date': event.date,
+                    'clubLogo': event.location.logo
 
                 },
 
@@ -95,14 +96,11 @@ map.on('load', () => {
         // const coordinates = e.features[0].geometry.coordinates.slice();
         const coordinates = e.features[0].geometry.coordinates.slice();
         const name = e.features[0].properties.name
-        console.log(name)
         const location = e.features[0].properties.location
-        console.log(location)
         const cost = e.features[0].properties.cost
-
         const date = e.features[0].properties.date
-
         const openingHours = e.features[0].properties.openingHours
+        const logo = e.features[0].properties.clubLogo
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
@@ -113,7 +111,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(`<h4>${name}</h4>Cost: ${cost} € <br>Event Location: ${location} <br>Date: ${date} <br>Opening Hours: ${openingHours}`).addTo(map);
+        popup.setLngLat(coordinates).setHTML(`<div><img src="${logo}" width='100' height='100'><h4>${name}</h4>Cost: ${cost} € <br>Event Location: ${location} <br>Date: ${date} <br>Opening Hours: ${openingHours}</div>`).addTo(map);
     });
 
     map.on('mouseleave', 'places', () => {
