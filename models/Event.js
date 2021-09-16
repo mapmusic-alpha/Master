@@ -11,17 +11,14 @@ const eventSchema = new Schema({
     artists: Array,
     artistsSpotify: Array,
     openingHours: String,
-
-
+    ageOfEntrance: String,
+    
     location: {
 
         type: Schema.Types.ObjectId,
         ref: 'Location'
 
     },
-
-    ageOfEntrance: String
-
 });
 
 const Event = mongoose.model('Event', eventSchema)

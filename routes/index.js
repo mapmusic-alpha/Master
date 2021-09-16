@@ -66,8 +66,8 @@ router.get("/create-event", (req, res, next) => {
       next(err)
     })
 })
-router.get("/admin", loginCheck(), (req, res, next) => {
-  res.render("admin")
+router.get("/create-location", loginCheck(), (req, res, next) => {
+  res.render("create-location")
 })
 
 router.get("/list-events", (req, res, next) => {
@@ -83,7 +83,7 @@ router.get("/list-locations", (req, res, next) => {
   res.render("list-locations")
 })
 
-router.post("/admin", (req, res, next) => {
+router.post("/create-location", (req, res, next) => {
   const locationName = req.body.location
   const locationDescription = req.body.description
   const locationCoordX = req.body.locationX
@@ -125,11 +125,11 @@ router.post("/admin", (req, res, next) => {
 
 router.post("/create-event", loginCheck(), (req, res, next) => {
   const location = req.body.chooseLocation
-  console.log(location)
+  
   const eventName = req.body.eventName
   const date = req.body.date
   const cost = req.body.cost
-  const ageOfEntry = req.body.ageOfEntry
+  const ageOfEntrance = req.body.ageOfEntry
   const openingHours = req.body.openingHours
   const genres = req.body.chooseGenres
 
@@ -158,19 +158,16 @@ router.post("/create-event", loginCheck(), (req, res, next) => {
   const artist8 = req.body.nameArtist8
   const artist8Spotify = req.body.spotifyNameArtist8
 
-
-  console.log(eventName, date, cost)
-
   //location check , location : location missing. Data? only date stupid => all commented out
   //Event.findOne({date : Date})
   //.then(EventFromDB => {
   //if (EventFromDB !== 0){
   //res.render("admin", {message : "event already created"})
   // } else {
-  Event.create({ name: eventName, date: date, cost: cost, ageOfEntry: ageOfEntry, openingHours: openingHours, artists: [artist1, artist2, artist3, artist4, artist5, artist6, artist7, artist8], artistsSpotify: [artist1Spotify, artist2Spotify, artist3Spotify, artist4Spotify, artist5Spotify, artist6Spotify, artist7Spotify, artist8Spotify] })
+  Event.create({ name: eventName, date: date, cost: cost, ageOfEntrance: ageOfEntrance, openingHours: openingHours, artists: [artist1, artist2, artist3, artist4, artist5, artist6, artist7, artist8], artistsSpotify: [artist1Spotify, artist2Spotify, artist3Spotify, artist4Spotify, artist5Spotify, artist6Spotify, artist7Spotify, artist8Spotify], genre: genres })
     .then(createdEvent => {
       console.log(createdEvent)
-      res.redirect("/admin")
+      res.redirect("/profile")
     })
 
     .catch(err => {
