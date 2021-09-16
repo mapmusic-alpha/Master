@@ -329,8 +329,8 @@ h3 {
 
 
 .mapbox-popup{
-  color:rgb(255, 255, 255);
-  background-color: grey;
+  color: black;
+  background-color: black;
   border-radius: 5%;
   font: 14px “Futura”, Helvetica, Arial, sans-serif;
 }
@@ -342,5 +342,5 @@ h3 {
 
 .mapbox-popup div{
 
-  background-color: black;
+  background-color:rgb(130, 130, 130);
 }
