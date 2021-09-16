@@ -1,5 +1,3 @@
-
-
 const features = []
 axios.get("/api/events")
     .then(events => {
@@ -126,9 +124,5 @@ map.on('load', () => {
 
 
 map.addControl(nav, 'top-left')
-
-
-
-
 
 
