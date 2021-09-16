@@ -198,9 +198,30 @@ a {
   margin-left: 150px
 }
 
-#createEventForm{
+#createEventForm > form{
   display: flex;
   justify-content: center;
   flex-direction: column;
   color: #fff;
+}
+
+
+#createEventForm > form > input[type=text] {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
+}
+
+#createEventForm > form > input[type=number] {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
 }
