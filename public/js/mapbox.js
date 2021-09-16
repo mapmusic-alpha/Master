@@ -85,7 +85,8 @@ map.on('load', () => {
     // Create a popup, but don't add it to the map yet.
     const popup = new mapboxgl.Popup({
         closeButton: false,
-        closeOnClick: false
+        closeOnClick: false,
+        className: 'mapbox-popup',
     });
 
     map.on('mouseenter', 'places', (e) => {
