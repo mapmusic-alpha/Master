@@ -343,4 +343,11 @@ h3 {
 .mapbox-popup div{
 
   background-color:rgb(130, 130, 130);
+  
+}
+
+
+.mapbox-popup img{
+
+  border-radius: 10%;
 }
