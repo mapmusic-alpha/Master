@@ -111,7 +111,7 @@ router.post("/create-location", (req, res, next) => {
           //nearestStation : {locationNearestStation, locationNearestStationDistance, locationAvailableLines}
           .then(createdLocation => {
             console.log(createdLocation)
-            res.redirect("/admin")
+            res.redirect("/profile")
           })
 
           .catch(err => {
@@ -164,7 +164,7 @@ router.post("/create-event", loginCheck(), (req, res, next) => {
   //if (EventFromDB !== 0){
   //res.render("admin", {message : "event already created"})
   // } else {
-  Event.create({ name: eventName, date: date, cost: cost, ageOfEntrance: ageOfEntrance, openingHours: openingHours, artists: [artist1, artist2, artist3, artist4, artist5, artist6, artist7, artist8], artistsSpotify: [artist1Spotify, artist2Spotify, artist3Spotify, artist4Spotify, artist5Spotify, artist6Spotify, artist7Spotify, artist8Spotify], genre: genres })
+  Event.create({ name: eventName, location: location, date: date, cost: cost, ageOfEntrance: ageOfEntrance, openingHours: openingHours, artists: [artist1, artist2, artist3, artist4, artist5, artist6, artist7, artist8], artistsSpotify: [artist1Spotify, artist2Spotify, artist3Spotify, artist4Spotify, artist5Spotify, artist6Spotify, artist7Spotify, artist8Spotify], genre: genres })
     .then(createdEvent => {
       console.log(createdEvent)
       res.redirect("/profile")
