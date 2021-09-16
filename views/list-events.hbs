@@ -1,8 +1,20 @@
-<h1>All Events</h1>
+<button  id="goBack">
+    <a href="/"> Back to Homepage</a>
+</button>
+<div>
+ <button id="goBack">
+    <a href="/profile"> Back to your profile</a>
+ </button>
+</div>
+
+
+
 
 {{#each events}}
-<br>
-<div>
+<div id="listEvents"> 
+  <div id="generalInfo">
+    <h3>general info</h3>
+    <br>
     {{name}}
     <br>
     {{location.name}}
@@ -14,7 +26,22 @@
     {{ageOfEntrance}}
     <br>
     {{openingHours}}
+    <br>
+  </div>  
+
+  <div id="lineUp">
+      <h3>line up</h3>
+      
+      <br>
+      {{artists}}
+      <br>
+      {{artistsSpotify}}
+  </div>
+
+  <div id="listEventsButtons">
+    <button><a href="/list-events/delete/{{_id}}">Delete Event</a></button>
+    <button><a href="/list-events/edit-event/{{_id}}">Edit event</a></button>
+  </div>
 </div>
-<button><a href="/list-events/delete/{{_id}}">Delete Event</a></button>
-<button><a href="/list-events/edit-event/{{_id}}">Edit event</a></button>
-{{/each}}
+ {{/each}}
+

@@ -216,6 +216,8 @@ a {
   font-size: large;
 }
 
+
+
 #createEventForm > form > input[type=number] {
   margin-top: 10px;
   margin-bottom: 5px;
@@ -224,4 +226,104 @@ a {
   width: 250px;
   height : 50px;
   font-size: large;
+}
+
+#createEventForm > form > button {
+  width: 75px;
+  height : 50px;
+  background-color : #a48beb;
+  color: #fff;
+  font-family: "Futura";
+  font-weight: 600;
+  border-radius: 20px;
+  margin-top: 25px
+}
+
+#createLocationForm > form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+#createLocationForm > form > input[type=text] {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
+}
+
+#createLocationForm > form > input[type=number] {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
+}
+
+#createLocationForm > form > button {
+  width: 75px;
+  height : 50px;
+  background-color : #a48beb;
+  color: #fff;
+  font-family: "Futura";
+  font-weight: 600;
+  border-radius: 20px;
+  margin-top: 25px
+}
+
+
+#profileButtons > button {
+  margin-top: 50px;
+  width: 250px;
+  height : 50px; 
+  background-color : #a48beb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: #fff;
+  font-family: "Futura";
+  font-weight: 800;
+}
+
+#username{
+  color: #fff;
+  font-size: 44px;
+}
+
+h3 {
+  color: #a48beb;
+  font-family: "futura";
+  font-size:large
+}
+
+#listEvents{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff
+}
+
+
+#listEventsButtons{
+  display : flex; 
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+#listEventsButtons > button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  height : 50px; 
+  background-color : #a48beb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: #fff;
+  font-family: "Futura";
+  font-weight: 800;
 }

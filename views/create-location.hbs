@@ -1,14 +1,18 @@
 <button  id="goBack">
     <a href="/"> Back to Homepage</a>
 </button>
+<div>
+ <button id="goBack">
+    <a href="/profile"> Back to your profile</a>
+ </button>
+</div>
 
-<h1>Create Location</h1>
+<div id="createLocation">
+  <h2>create location</h2>
+</div>
 
-<a href="/list-events">see all events</a>
-<a href="/create-event">create event</a>
-
-
-<form action="/admin" method="POST" name="create-location">
+<div id="createLocationForm">
+ <form action="/create-location" method="POST" name="create-location">
 
     <label for="location">location-name</label>
     <input type="text" name="location">
@@ -35,4 +39,5 @@
         <input type="text" name="nearestStationAvailableLines">
 
         <button type="submit">create!</button>
-</form>
+ </form>
+</div>
