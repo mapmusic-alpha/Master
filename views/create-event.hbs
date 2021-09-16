@@ -1,95 +1,95 @@
-<button  id="goBack">
+<button id="goBack">
     <a href="/"> Back to Homepage</a>
 </button>
 <div>
- <button id="goBack">
-    <a href="/profile"> Back to your profile</a>
- </button>
+    <button id="goBack">
+        <a href="/profile"> Back to your profile</a>
+    </button>
 </div>
 
 <div id="createEvent">
-  <h2>create event</h2>
+    <h2>Create an event</h2>
 </div>
 
-<h3>choose a location</h3>
+<h3>Select a location</h3>
 <div id="createEventForm">
- <form  action="/create-event" method="POST" name="create-event">
-    <label for="chooseLocation">select your location</label>
-    <select name="chooseLocation">
-        {{#each location}}
-        <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-    </select>
+    <form action="/create-event" method="POST" name="create-event">
+        <label for="chooseLocation">Select your location</label>
+        <select name="chooseLocation">
+            {{#each location}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
 
-<h3>basic inforamtion</h3>
-    <label for="eventName">type in event name</label>
-    <input type="text" name="eventName">
-    <label name="select-genre" action="admin" method="POST">choose genre</label>
-    <select name="chooseGenres" multiple>
-        <option value="jazz">Jazz</option>
-        <option value="hip-hop">Hip-Hop</option>
-        <option value="raggea">Raggea</option>
-        <option value="hard-techno">Hard Techno</option>
-        <option value="melodic-techno">Melodic Techno</option>
-        <option value="minimalistic-techno">Minimalstic Techno</option>
-    </select>
+        <h3>Basic information</h3>
+        <label for="eventName">type in event name</label>
+        <input type="text" name="eventName">
+        <label name="select-genre" action="admin" method="POST">Select genre</label>
+        <select name="chooseGenres" multiple>
+            <option value="jazz">Jazz</option>
+            <option value="hip-hop">Hip-Hop</option>
+            <option value="raggea">Raggea</option>
+            <option value="hard-techno">Hard Techno</option>
+            <option value="melodic-techno">Melodic Techno</option>
+            <option value="minimalistic-techno">Minimalstic Techno</option>
+        </select>
 
-    <label for="date">type in date in format DD.MM => no Zeros if possible</label>
-    <input type="text" name="date">
+        <label for="date">type in date in format DD.MM => no Zeros if possible</label>
+        <input type="text" name="date">
 
-    <label for="cost">type in ticket price</label>
-    <input type="number" name="cost">
+        <label for="cost">type in ticket price</label>
+        <input type="number" name="cost">
 
-    <label for="openingHours">type in opening hours in format HH:MM - HH:MM</label>
-    <input type="text" name="openingHours">
+        <label for="openingHours">type in opening hours in format HH:MM - HH:MM</label>
+        <input type="text" name="openingHours">
 
-    <label for="ageOfEntrance">type in age of entrance => 18+ or 21+</label>
-    <input type="text" name="ageOfEntry">
+        <label for="ageOfEntrance">type in age of entrance => 18+ or 21+</label>
+        <input type="text" name="ageOfEntry">
 
-    <h3>line up</h3>
+        <h3>line up</h3>
 
-    <label for="nameArtist1">type in artist name</label>
-    <input type="text" name="nameArtist1">
-    <label for="spotifyNameArtist1">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist1">
+        <label for="nameArtist1">type in artist name</label>
+        <input type="text" name="nameArtist1">
+        <label for="spotifyNameArtist1">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist1">
 
-    <label for="nameArtist2">type in artist name</label>
-    <input type="text" name="nameArtist2">
-    <label for="spotifyNameArtist2">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist2">
+        <label for="nameArtist2">type in artist name</label>
+        <input type="text" name="nameArtist2">
+        <label for="spotifyNameArtist2">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist2">
 
-    <label for="nameArtist3">type in artist name</label>
-    <input type="text" name="nameArtist3">
-    <label for="spotifyNameArtist3">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist3">
+        <label for="nameArtist3">type in artist name</label>
+        <input type="text" name="nameArtist3">
+        <label for="spotifyNameArtist3">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist3">
 
-    <label for="nameArtist4">type in artist name</label>
-    <input type="text" name="nameArtist4">
-    <label for="spotifyNameArtist4">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist4">
+        <label for="nameArtist4">type in artist name</label>
+        <input type="text" name="nameArtist4">
+        <label for="spotifyNameArtist4">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist4">
 
-    <label for="nameArtist5">type in artist name</label>
-    <input type="text" name="nameArtist5">
-    <label for="spotifyNameArtist5">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist5">
+        <label for="nameArtist5">type in artist name</label>
+        <input type="text" name="nameArtist5">
+        <label for="spotifyNameArtist5">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist5">
 
-    <label for="nameArtist6">type in artist name</label>
-    <input type="text" name="nameArtist6">
-    <label for="spotifyNameArtist6">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist6">
+        <label for="nameArtist6">type in artist name</label>
+        <input type="text" name="nameArtist6">
+        <label for="spotifyNameArtist6">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist6">
 
-    <label for="nameArtist7">type in artist name</label>
-    <input type="text" name="nameArtist7">
-    <label for="spotifyNameArtist7">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist7">
+        <label for="nameArtist7">type in artist name</label>
+        <input type="text" name="nameArtist7">
+        <label for="spotifyNameArtist7">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist7">
 
-    <label for="nameArtist8">type in artist name</label>
-    <input type="text" name="nameArtist8">
-    <label for="spotifyNameArtist8">type in spotify username of artist</label>
-    <input type="text" name="spotifyNameArtist8">
+        <label for="nameArtist8">type in artist name</label>
+        <input type="text" name="nameArtist8">
+        <label for="spotifyNameArtist8">type in spotify username of artist</label>
+        <input type="text" name="spotifyNameArtist8">
 
-    
 
-    <button type="submit">create</button>
+
+        <button type="submit">Create</button>
 </div>
 </form>

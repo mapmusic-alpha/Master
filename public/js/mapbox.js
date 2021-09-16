@@ -4,7 +4,6 @@ axios.get("/api/events")
 
         let allEvents = events.data
 
-
         console.log(allEvents)
         allEvents.forEach(event => {
 
@@ -111,7 +110,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(`<div><img src="${logo}" width='100' height='100'><h4>${name}</h4>Cost: ${cost} € <br>Location: ${location} <br>Date: ${date} <br>Opening Hours: ${openingHours}</div>`).addTo(map);
+        popup.setLngLat(coordinates).setHTML(`<div><img src="${logo}" width='100' height='100'><h4>${name}</h4>Cost: ${cost} € <br>Location: ${location} <br>Date: ${date} <br>Time: ${openingHours}</div>`).addTo(map);
     });
 
     map.on('mouseleave', 'places', () => {
