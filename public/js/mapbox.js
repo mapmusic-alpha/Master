@@ -1,7 +1,45 @@
 
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoia2lyYW5ib3lsZSIsImEiOiJja3RlNTYyNW0ybHYwMnZqcDFydHF6ZGY4In0.jDVDbfsctFgWo2l3jRFnww'
+const features = []
+axios.get("/api/events")
+    .then(events => {
 
+        let allEvents = events.data
+
+
+        console.log(allEvents)
+        allEvents.forEach(event => {
+
+            const feature = {
+                'type': 'feature',
+
+                'properties': {
+                    'name': event.name,
+                    'cost': event.cost,
+                    'location': event.location.name,
+                    'openingHours': event.openingHours,
+                    'date': event.date
+
+                },
+
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': event.location.coordinates
+                }
+            }
+
+            features.push(feature)
+        })
+
+    })
+
+
+console.log(features)
+
+
+
+
+mapboxgl.accessToken = 'pk.eyJ1Ijoia2lyYW5ib3lsZSIsImEiOiJja3RlNTYyNW0ybHYwMnZqcDFydHF6ZGY4In0.jDVDbfsctFgWo2l3jRFnww'
 const berlinCoords = [13.404954, 52.520008]
 const mapBounds = [13.404954, 52.520008]
 
@@ -10,75 +48,12 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/kiranboyle/cktifo8rp658g17pp4mlnw554',
     center: berlinCoords,
     zoom: 12,
-    //maxBounds: mapBounds
+    // maxBounds: mapBounds
 })
 
 const nav = new mapboxgl.NavigationControl()
 
 
-const events = [{
-    name: 'Cool party1',
-    date: 12 - 01 - 02,
-    cost: 5,
-    genre: 'Techno',
-
-    location: {
-
-        coordinates: [13.4430, 52.5111]
-
-    },
-
-},
-{
-    name: 'Cool party2',
-    date: 12 - 01 - 03,
-    cost: 10,
-    genre: 'Techno',
-
-    location: {
-
-        coordinates: [13.5617, 52.5002]
-
-    },
-
-},
-{
-    name: 'Cool party2',
-    date: 12 - 01 - 03,
-    cost: 10,
-    genre: 'Techno',
-
-    location: {
-
-        coordinates: [13.4652, 52.4974]
-
-    },
-
-},
-]
-
-const features = []
-
-events.forEach(event => {
-
-    const feature = {
-        'type': 'feature',
-
-        'properties': {
-            'name': event.name
-        },
-
-        'geometry': {
-            'type': 'Point',
-            'coordinates': event.location.coordinates
-        }
-    }
-
-    features.push(feature)
-})
-
-
-console.log(features)
 
 // mapbox config below
 
@@ -103,7 +78,7 @@ map.on('load', () => {
             'circle-color': '#e60026',
             'circle-radius': 6,
             'circle-stroke-width': 2,
-            'circle-stroke-color': '#ffffff'
+            'circle-stroke-color': '#000000'
         }
     });
 
@@ -120,11 +95,15 @@ map.on('load', () => {
         // Copy coordinates array.
         // const coordinates = e.features[0].geometry.coordinates.slice();
         const coordinates = e.features[0].geometry.coordinates.slice();
-        const description = e.features[0].properties.description
         const name = e.features[0].properties.name
         console.log(name)
-        const location = e.features[0].name
+        const location = e.features[0].properties.location
         console.log(location)
+        const cost = e.features[0].properties.cost
+
+        const date = e.features[0].properties.date
+
+        const openingHours = e.features[0].properties.openingHours
 
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
@@ -135,7 +114,7 @@ map.on('load', () => {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(coordinates).setHTML(`<h3>${name}</h3> <br>${description} <br> ${location}`).addTo(map);
+        popup.setLngLat(coordinates).setHTML(`<h4>${name}</h4>Cost: ${cost} € <br>Event Location: ${location} <br>Date: ${date} <br>Opening Hours: ${openingHours}`).addTo(map);
     });
 
     map.on('mouseleave', 'places', () => {

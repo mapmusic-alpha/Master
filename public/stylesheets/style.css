@@ -1,12 +1,182 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Futura", Helvetica, Arial, sans-serif;
+  background-color: #272727;
 }
 
+h2 {
+  color: #a48beb;
+  font-size: 44px;
+} 
+
+#header > div.nameAndSlogan > h3{
+  color : #fff; 
+  font-size : 25px
+}
+
+#header > div.nameAndSlogan > h1{
+  color : #a48beb;
+  font-size : 75px 
+}
+
+#header > div.nameAndSlogan{
+  height:150px;
+  margin-top: -100px;
+}
+
+#header > div.logo {
+  margin-top: 100px;
+}
 a {
-  color: #00b7ff;
+  color: #fff;
+  font: "Futura", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  text-decoration-line: none;
+
 }
 
-h1 {
-  color: 15px;
+#signUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#buttons {
+  margin-top: 250px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#buttons > button {
+  width: 250px;
+  height : 50px;
+  background-color : #a48beb;
+  -moz-text: #fff;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  outline-style: none;
+
+}
+
+#buttons > button:hover{
+  color:#a48beb
+}
+
+#buttons > button > a{
+  font-family: "futura";
+}
+#signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#signUp > input {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
+}
+
+#signUp > button {
+  margin-top: 25px;
+  width: 250px;
+  height : 50px; 
+  background-color : #a48beb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: #fff;
+  font-family: "Futura";
+  font-weight: 800;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+#signUp > button:hover{
+  color:#a48beb
+}
+
+
+
+#message > p {
+  color: #a48beb;
+  margin-left:200px;
+  margin-top: 50px
+}
+
+
+#goBack {
+  margin-top: 25px;
+  width: 200px;
+  height : 50px; 
+  background-color : #a48beb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: #fff;
+  font-family: "Futura";
+  font-weight: 800;
+}
+
+#logIn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#logInForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logInForm > input {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-family: "futura";
+  width: 250px;
+  height : 50px;
+  font-size: large;
+}
+
+#logInForm > button {
+  margin-top: 25px;
+  width: 250px;
+  height : 50px; 
+  background-color : #a48beb;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: #fff;
+  font-family: "Futura";
+  font-weight: 800;
+}
+
+#filterButtonsContainer{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-left: 150px;
+}
+#filterButtons{
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
