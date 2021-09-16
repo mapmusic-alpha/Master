@@ -1,19 +1,19 @@
-<button  id="goBack">
-    <a href="/"> Back to Homepage</a>
+<button id="goBack">
+  <a href="/"> Back to Homepage</a>
 </button>
 <div>
- <button id="goBack">
+  <button id="goBack">
     <a href="/profile"> Back to your profile</a>
- </button>
+  </button>
 </div>
 
 
 
 
 {{#each events}}
-<div id="listEvents"> 
+<div id="listEvents">
   <div id="generalInfo">
-    <h3>general info</h3>
+    <h3>General information</h3>
     <br>
     {{name}}
     <br>
@@ -27,15 +27,15 @@
     <br>
     {{openingHours}}
     <br>
-  </div>  
+  </div>
 
   <div id="lineUp">
-      <h3>line up</h3>
-      
-      <br>
-      {{artists}}
-      <br>
-      {{artistsSpotify}}
+    <h3>Line Up</h3>
+
+    <br>
+    {{artists}}
+    <br>
+    {{artistsSpotify}}
   </div>
 
   <div id="listEventsButtons">
@@ -43,5 +43,4 @@
     <button><a href="/list-events/edit-event/{{_id}}">Edit event</a></button>
   </div>
 </div>
- {{/each}}
-
+{{/each}}
