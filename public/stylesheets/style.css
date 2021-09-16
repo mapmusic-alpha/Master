@@ -333,11 +333,12 @@ h3 {
   background-color: black;
   border-radius: 5%;
   font-family: 'Roboto Mono', monospace;
+  font-size:1.2em;
 }
 .mapbox-popup h4{
   text-shadow: grey;
   text-align: center;
-  font-size:1.2em;
+  font-size:1.3em;
 }
 
 
